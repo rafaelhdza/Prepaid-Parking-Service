@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./Parking.css">
+    <meta charset="UTF-8">
+    <script src="./Parking.js"></script>
+
+</head>
+<h1>Reserve Parking</h1>
+<body onload="layout()">
+<form id="form" action="./Parking.js">
+    <div id="formframe">
+        <label>First Name:</label><input type="text" name="fname">
+        <label>Last Name: </label><input type="text" name="lname"><br>
+        <label>Date from:</label><input type="date" min="2019-12-01" max="2020-06-01" id="datefrom"><br>
+        <label>Date to:</label><input type="date" id="dateto"><br>
+        <button onClick="userForm()">Reserve</button>
+    </div>
+</form>
+
+<div id="layout" ></div>
+</body>
+</html>
