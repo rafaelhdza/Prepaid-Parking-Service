@@ -23,6 +23,7 @@ div{
     float:left;
     margin: 15px;
     text-align: center ;
+    cursor:pointer;
 }
 div#formframe{
     position: relative;

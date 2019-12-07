@@ -6,7 +6,7 @@
 
 
 </head>
-<body onload="layout()">
+<body>
 
 
 
@@ -17,11 +17,11 @@
 
         <label>Select a date:</label>
         <input type="date" id="datefrom"><br>
-        <label id="labeltime" style="display: none">Set time in hours:</label>
-        <input id="timefrom" type="time" min="08:00" max="18:00" step="300" required style="display: none"><br>
-        <input id="timeto" type="time" min="08:00" max="18:00" step="300" required style="display: none"><br>
-
-        <button onclick="userForm()">Next</button>
+        <label id="labeltime" style="display: none">Choose your duration:</label>
+        <input id="timefrom" type="time" min="08:00" max="18:00" step="300"  required style="display: none">
+        <input id="timeto" type="time" min="08:00" max="18:00" step="300"  required style="display: none"><br>
+        <p id="totalprice"style="display: none"></p>
+        <button id="button" onclick="userForm()">Next</button>
 
        <!--
         <label>First Name:</label><input type="text" name="fname">
@@ -32,11 +32,19 @@
     </div>
 
 <!--Layout of car spots-->
-<div id="layout"></div>
+<div id="layout" style="display: none;"></div>
+
+
+
+<!----TEMPORAL TAGS----->
+<p id="message"></p>
 <p id="try"></p>
 <p id="try2"></p>
 <p id="price"></p>
-
+<p id="thetime"></p>
+<p id="thetime2"></p>
+<p id="starting"></p>
+<p id="finish"></p>
 
 
 </body>
