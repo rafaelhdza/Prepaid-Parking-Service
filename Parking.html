@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="./Parking.css">
+    <link rel="stylesheet" href="Parking.css">
     <meta charset="UTF-8">
-    <script src="./Parking.js"></script>
+
 
 </head>
-<h1>Reserve Parking</h1>
 <body onload="layout()">
-<form id="form" action="./Parking.js">
+
+
+
+<h1>Lenox Square Mall Parking</h1>
+
+<h2>Reserve your best spot!</h2>
     <div id="formframe">
+
+        <label>Select a date:</label>
+        <input type="date" id="datefrom"><br>
+        <label id="labeltime" style="display: none">Set time in hours:</label>
+        <input id="timefrom" type="time" min="08:00" max="18:00" step="300" required style="display: none"><br>
+        <input id="timeto" type="time" min="08:00" max="18:00" step="300" required style="display: none"><br>
+
+        <button onclick="userForm()">Next</button>
+
+       <!--
         <label>First Name:</label><input type="text" name="fname">
         <label>Last Name: </label><input type="text" name="lname"><br>
         <label>Date from:</label><input type="date" min="2019-12-01" max="2020-06-01" id="datefrom"><br>
-        <label>Date to:</label><input type="date" id="dateto"><br>
-        <button onClick="userForm()">Reserve</button>
-    </div>
-</form>
+        <label>Date to:</label><input type="date" id="dateto"><br>-->
 
-<div id="layout" ></div>
+    </div>
+
+<!--Layout of car spots-->
+<div id="layout"></div>
+<p id="try"></p>
+<p id="try2"></p>
+<p id="price"></p>
+
+
+
 </body>
+<script src="Parking.js"></script>
 </html>
