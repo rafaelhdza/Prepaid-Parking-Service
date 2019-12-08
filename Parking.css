@@ -1,36 +1,96 @@
 body{
-    width: 800px;
+    width: 1160px;
     height: 800px;
-    /*background: url("./Parking Images/parkingbackground_cropped.png");*/
-    background-position: left;
-    background-size: 60%;
+    background: url("parkingbackground.jpg");
+    background-size: 100%;
     background-repeat: no-repeat;
-   /*background-color: #bcbcbc;*/
+    margin: 60px;
+    background-color: #ffc105;
+    font-family: "AppleGothic";
+}
+h1{
+    font-size:40pt;
+    padding: 10px;
+    margin: 0px;
+}
+h2{
+    padding: 10px;
+    margin: 0px;
+}
+input{
+    font-family: "AppleGothic";
+    font-size: 12pt;
+}
+button{
+    font-family: "AppleGothic";
+    font-size: 12pt;
 }
 div#layout{
-    width: 800px;
+    alignment: center;
+    width: 650px;
     height: 500px;
     position: relative;
-    margin: 0 auto;
-    border:none;
+    left:0px;
+    right: 0px;
+    top:-55px;
+    bottom: 55px;
+    background-color: white;
+    border-radius: 20px;
+    border: black 2px solid;
 
 }
+
 /*Spots*/
-div{
+div[id^="spot"]{
     border: black 2px solid;
     height: 80px;
-    width: 40px;
+    width: 50px;
     float:left;
-    margin: 15px;
+    margin-left:5px;
+    margin-right: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     text-align: center ;
     cursor:pointer;
+    background-color: white;
+    border: black 2px solid;
+    font-size: 10pt;
 }
+div[id^="spot"]:hover{
+    background-color: grey;
+    opacity: 50%;
+}
+
 div#formframe{
     position: relative;
     text-align: left;
     height: auto;
     width: 400px;
-    left: 800px;
+    left: 700px;
     top: 100px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 20px;
+    border: black 2px solid;
 
+
+}
+
+div#mallside{
+    text-align: center;
+    width: 630px;
+    height: 50px;
+    background-color: grey;
+    border: black 2px solid;
+
+}
+p#message{
+    position:relative;
+    left:700px;
+    bottom: 130px;
+    font-weight: bold;
+    width: auto;
+    height: 50px;
+    font-size: 20px;
+    max-width: 300px;
 }

@@ -16,26 +16,20 @@
     <div id="formframe">
 
         <label>Select a date:</label>
+
         <input type="date" id="datefrom"><br>
-        <label id="labeltime" style="display: none">Choose your duration:</label>
         <input id="timefrom" type="time" min="08:00" max="18:00" step="300"  required style="display: none">
         <input id="timeto" type="time" min="08:00" max="18:00" step="300"  required style="display: none"><br>
         <p id="totalprice"style="display: none"></p>
         <button id="button" onclick="userForm()">Next</button>
 
 
-
     </div>
 
-<!--Layout of car spots-->
-<div id="layout" style="display: none;"></div>
-
-
-
-<!----TEMPORAL TAGS----->
-
+<div id="layout" style="display: none;">
+    <div id="mallside">Mall Entrance</div>
+</div>
 <p id="message"></p>
-
 
 </body>
 <script type="text/javascript" src="Parking.js"></script>

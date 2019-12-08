@@ -41,7 +41,7 @@ function spotpressed(currentspot,spotvalue) {
 }
 
 function Reserve(){
-    window.location.replace("ParkingPayment.html");
+    window.location.assign("ParkingPayment.html");
 }
 
 function userForm() {
@@ -66,8 +66,8 @@ function userForm() {
     }
     //0=sunday, 1=Monday, 2=Tuesday, 3=Wednesday, 4=Thurday, 5=Friday, 6=Saturday
 
-
-    document.getElementById("labeltime").style.display = "block";
+    document.getElementById("message").innerHTML = "Choose your duration";
+    document.getElementById("message").style.display = "block";
     document.getElementById("timefrom").style.display = "block";
     document.getElementById("timeto").style.display = "block";
 
@@ -78,19 +78,20 @@ function userForm() {
 
 function ShowPrice() {
     for (let i=1;i<=10; i++){
-        document.getElementById(`spot_${i}`).innerHTML += '$<p id="price_'+i+'">'+ (priceperhour * 2)+'</p>';
         section = "VIP";
+        document.getElementById(`spot_${i}`).innerHTML += "\n"+section + "\n$"+'<p id="price_'+i+'">'+ (priceperhour * 2)+'</p>';
     }
 
     for (let i=11;i<=20; i++){
-        document.getElementById(`spot_${i}`).innerHTML += '$<p id="price_'+i+'">'+ (priceperhour * 1.5)+'</p>';
         section = "Plus";
+        document.getElementById(`spot_${i}`).innerHTML += section +' $<p id="price_'+i+'">'+ (priceperhour * 1.5)+'</p>';
+
 
     }
 
     for (let i=21;i<=40; i++){
-        document.getElementById(`spot_${i}`).innerHTML += '$<p id="price_'+i+'">'+ (priceperhour * 1)+'</p>';
         section = "Simple";
+        document.getElementById(`spot_${i}`).innerHTML += section +' $<p id="price_'+i+'">'+ (priceperhour * 1)+'</p>';
 
     }
 
