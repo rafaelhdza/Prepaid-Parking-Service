@@ -36,7 +36,8 @@ function spotpressed(currentspot,spotvalue) {
 
     document.getElementById("button").innerHTML = "Reserve";
     document.getElementById("button").onclick = Reserve;
-    PaymentInfo(totalsum)
+
+    PaymentInfo(totalsum);
 }
 
 function Reserve(){
@@ -125,6 +126,29 @@ function Duration() {
 //--------------------------------------------------------------------------------
 
 function PaymentInfo(totalsum){
+
     document.getElementById("subtotal").innerHTML = "$"+totalsum;
     document.getElementById("total").innerText= "$"+(totalsum+1.5);
+}
+
+function UserInfo() {
+    var name = document.getElementById("fname").value;
+    var midname = document.getElementById("mname").value;
+    var lastname = document.getElementById("lname").value;
+    var street = document.getElementById("streetad").value;
+    var apt = document.getElementById("aptsuite").value;
+    var city = document.getElementById("citytown").value;
+    var country = document.getElementById("country").value;
+    var phone = document.getElementById("number").value;
+
+    document.getElementById("paymentbutton").onclick= Payment;
+
+}
+
+function Payment(){
+    document.getElementById("creditcard").style.display = "block";
+    document.getElementById("message").innerHTML = "Reserve";
+
+
+
 }
