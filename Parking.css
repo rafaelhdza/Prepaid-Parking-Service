@@ -1,11 +1,12 @@
 body{
     width: 1160px;
     height: 800px;
-    background: url("parkingbackground.jpg");
+    /*background: url("parkingbackground.jpg");background-color: #ffc105; */
+
     background-size: 100%;
     background-repeat: no-repeat;
     margin: 60px;
-    background-color: #ffc105;
+
     font-family: "AppleGothic";
 }
 h1{
@@ -86,11 +87,13 @@ div#mallside{
 }
 p#message{
     position:relative;
-    left:700px;
-    bottom: 130px;
+
     font-weight: bold;
     width: auto;
     height: 50px;
-    font-size: 20px;
+    font-size: 15px;
     max-width: 300px;
+}
+select{
+    font-family: "AppleGothic";
 }

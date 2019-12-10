@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="Parking.css">
+    <script type="text/javascript" src="Parking.js"></script>
     <meta charset="UTF-8">
 
 </head>
@@ -11,14 +12,15 @@
 <h2>Reserve your best spot!</h2>
 <h3>Shopping Cart</h3>
 
-<div>
-    <label>Subtotal</label><p id="subtotal"></p>
-    <label>Processing Fee $1.50</label>
-    <label>Total</label><p id="total"></p>
+<p id="message">Enter the following information</p>
+
+<div id="formframe">
+    <span style="font-weight: bold">Subtotal: </span><span id="subtotal"></span><br>
+    <span style="font-weight: bold">Processing Fee: </span><span> $1.50</span><br>
+    <span style="font-weight: bold">Total: </span><span id="total"></span>
     </div>
 
         <div id="personalinfo">
-        <p>Enter the following information: </p>
        <label>First Name:</label><input type="text" id="fname" placeholder="First Name">
             <input type="text" id="mname" placeholder="Middle"><br>
        <label>Last Name:</label><input type="text" id="lname" placeholder="Last Name"><br>
@@ -348,10 +350,11 @@
 
         </div>
 
-<button id="paymentbutton" onclick="UserInfo()">Next</button>
-<p id="message"></p>
+<button id="backbutton" onload="PaymentInfo()" style="display: none">Back</button>
+
+<button id="paymentbutton" onclick="Payment()">Continue</button>
+
 
 </body>
-<script type="text/javascript" src="Parking.js"></script>
 
 </html>

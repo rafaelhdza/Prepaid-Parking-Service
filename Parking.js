@@ -9,6 +9,8 @@ var dayofweek;
 var hourdif;
 var mindif;
 var section;
+var totalsum;
+
 function layout(){
     document.getElementById("layout").style.display = "block";
 
@@ -25,14 +27,20 @@ function layout(){
 function spotpressed(currentspot,spotvalue) {
     var priceselected = document.getElementById(`price_${spotvalue}`).innerHTML;
 
+
     document.getElementById("totalprice").style.display = "block";
 
     var days = ["Sunday","Monday", "Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
-   var totalsum = (priceselected*hourdif) + (priceselected*mindif);
+   totalsum = (priceselected*hourdif) + (priceselected*mindif);
+
+   if (mindif.substring(2,4)== '00') {
+       var min_short = 0;
+   }
+   else  var min_short = mindif.substring(2, 4);
 
     document.getElementById("totalprice").innerHTML = "Your reservation subtotal is $" + totalsum
-    + "\n on " + days[dayofweek] + " "+ datefrom + "\n for " + hourdif + " hours and " + mindif + "minutes.";
+    + "\n on " + days[dayofweek] + " "+ datefrom + "\n for " + hourdif + " hours and " + min_short + " minutes.";
 
     document.getElementById("button").innerHTML = "Reserve";
     document.getElementById("button").onclick = Reserve;
@@ -41,7 +49,9 @@ function spotpressed(currentspot,spotvalue) {
 }
 
 function Reserve(){
+    window.localStorage.setItem('totalsum',totalsum);
     window.location.assign("ParkingPayment.html");
+
 }
 
 function userForm() {
@@ -110,7 +120,7 @@ function Duration() {
     mindif = Math.abs(finishmin-startmin)/60;
     mindif = mindif.toFixed(2);
     if (starthour>= finishhour || finishhour<=starthour){
-       alert("Please choose a different set of hours")
+       alert("Please choose a different set of hours");
    }
     else if (starthour>=8 && starthour<12){
         priceperhour = priceperhour +0.5;
@@ -126,30 +136,50 @@ function Duration() {
 }
 //--------------------------------------------------------------------------------
 
-function PaymentInfo(totalsum){
+function PaymentInfo(){
+    var subtotal = localStorage.getItem('totalsum');
+    var total = parseInt(subtotal) + 1.5;
+    document.getElementById("subtotal").innerHTML = "$"+subtotal;
+    document.getElementById("total").innerText= "$"+(total);
 
-    document.getElementById("subtotal").innerHTML = "$"+totalsum;
-    document.getElementById("total").innerText= "$"+(totalsum+1.5);
+   /* document.getElementById("personalinfo").style.display = "block";
+    document.getElementById("paymentinfo").style.display = "none";
+    document.getElementById("paymentbutton").innerHTML = "Continue";
+    document.getElementById("backbutton").style.display = "none";
+    document.getElementById("paymentbutton").onclick = Payment();*/
+
+
+    window.localStorage.setItem('name',document.getElementById("fname").value);
+    window.localStorage.setItem('midname',document.getElementById("mname").value);
+    window.localStorage.setItem('street',document.getElementById("streetad").value);
+    window.localStorage.setItem('apt',document.getElementById("aptsuite").value);
+    window.localStorage.setItem('city',document.getElementById("citytown").value);
+    window.localStorage.setItem('country',document.getElementById("country").value);
+    window.localStorage.setItem('phone',document.getElementById("number").value);
+
+
 }
 
-function UserInfo() {
-    var name = document.getElementById("fname").value;
-    var midname = document.getElementById("mname").value;
-    var lastname = document.getElementById("lname").value;
-    var street = document.getElementById("streetad").value;
-    var apt = document.getElementById("aptsuite").value;
-    var city = document.getElementById("citytown").value;
-    var country = document.getElementById("country").value;
-    var phone = document.getElementById("number").value;
-
-    document.getElementById("paymentbutton").onclick= Payment;
-
-}
 
 function Payment(){
+    document.getElementById("personalinfo").style.display = "none";
     document.getElementById("creditcard").style.display = "block";
-    document.getElementById("message").innerHTML = "Reserve";
+    document.getElementById("backbutton").style.display = "block";
+
+    document.getElementById("paymentbutton").innerHTML = "Reserve";
+    document.getElementById("paymentbutton").onclick = Reservation;
+
+    window.localStorage.setItem('cardtype',document.getElementById("cardtype").value);
+    window.localStorage.setItem('cardholder',document.getElementById("fullname").value);
+    window.localStorage.setItem('cardnumber',document.getElementById("cardnumber").value);
+    window.localStorage.setItem('expiration',document.getElementById("expiration").value);
+    window.localStorage.setItem('cvv',document.getElementById("cvv").value);
 
 
+}
+
+function Reservation(){
+
+    window.location.assign("Confirmation.html");
 
 }
