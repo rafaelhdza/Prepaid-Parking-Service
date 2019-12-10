@@ -8,10 +8,40 @@
 </head>
 <h1>Lenox Square Mall Parking</h1>
 
-<body onload="PaymentInfo()">
+    <body onload="Overview()">
 <h2>Reserve your best spot!</h2>
 
+<p id="message">Overview of your reservation:</p>
+<p id="order" style="display: none">Order Number:</p>
+
+<div id="Overview">
+    <span>Total Amount: </span><span id="amount"></span><br>
+    <span>Date of Reservation:</span><span id="date"></span><br>
+    <span>Time of Parking:</span><span id="time"></span><br>
+    <span>Duration:</span><span id="duration"></span><br>
+    <span>Section:</span><span id="section"></span><br>
+
+    <span id="personalinfo"style="font-weight: bold">Personal Information</span><br>
+    <span>Name:</span><span id ="name"></span><br>
+    <span>Middle Name:</span><span id="midname"></span><br>
+    <span>Last Name:</span><span id="lastname"></span><br>
+    <span style="font-weight: bold" >Billing Address:</span><br>
+    <span>Street:</span><span id="street"></span><br>
+    <span>Apartment/Suite:</span><span id="apt"></span><br>
+    <span>City/Town:</span><span id="city"></span><br>
+    <span>Country:</span><span id="country"></span><br>
+    <span>Phone Number:</span><span id="phone"></span><br>
+    <span>Email Address:</span><span id="email"></span><br>
 
 
-</body>
+    <span id="paymentmethod"style="font-weight: bold">Payment Method</span><br>
+    <span>Card Type:</span><span id="cardtype"></span><br>
+    <span>Card Number:</span><span id="cardnumber"></span><br>
+    <span>Expiration:</span><span id="expiration"></span><br>
+
+
+</div>
+    <button type="button" id="confirm" onclick="Confirmation()">Confirm Order</button>
+
+    </body>
 </html>
