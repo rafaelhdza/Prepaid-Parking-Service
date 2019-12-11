@@ -12,19 +12,24 @@
 <h2>Reserve your best spot!</h2>
 
 <p id="message">Overview of your reservation:</p>
-<p id="order" style="display: none">Order Number:</p>
+<div id="order" style="display: none">Order Number:</div>
 
 <div id="Overview">
+    <div id="parkinginfo">
     <span>Total Amount: </span><span id="amount"></span><br>
     <span>Date of Reservation:</span><span id="date"></span><br>
     <span>Time of Parking:</span><span id="time"></span><br>
     <span>Duration:</span><span id="duration"></span><br>
     <span>Section:</span><span id="section"></span><br>
+    </div>
 
+    <div id="information">
     <span id="personalinfo"style="font-weight: bold">Personal Information</span><br>
     <span>Name:</span><span id ="name"></span><br>
     <span>Middle Name:</span><span id="midname"></span><br>
     <span>Last Name:</span><span id="lastname"></span><br>
+    </div>
+    <div id="billing">
     <span style="font-weight: bold" >Billing Address:</span><br>
     <span>Street:</span><span id="street"></span><br>
     <span>Apartment/Suite:</span><span id="apt"></span><br>
@@ -32,16 +37,17 @@
     <span>Country:</span><span id="country"></span><br>
     <span>Phone Number:</span><span id="phone"></span><br>
     <span>Email Address:</span><span id="email"></span><br>
+    </div>
 
-
+    <div id="paymentinfo">
     <span id="paymentmethod"style="font-weight: bold">Payment Method</span><br>
     <span>Card Type:</span><span id="cardtype"></span><br>
     <span>Card Number:</span><span id="cardnumber"></span><br>
     <span>Expiration:</span><span id="expiration"></span><br>
-
+    </div>
 
 </div>
-    <button type="button" id="confirm" onclick="Confirmation()">Confirm Order</button>
+    <button id="confirm" onclick="Confirmation()">Confirm Order</button>
 
     </body>
 </html>

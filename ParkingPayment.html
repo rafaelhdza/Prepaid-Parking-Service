@@ -18,7 +18,10 @@
     <span style="font-weight: bold">Subtotal: </span><span id="subtotal"></span><br>
     <span style="font-weight: bold">Processing Fee: </span><span> $1.50</span><br>
     <span style="font-weight: bold">Total: </span><span id="total"></span>
-    </div>
+    <button id="button" onclick="Payment()">Continue</button>
+
+
+</div>
 
         <div id="personalinfo">
        <span>First Name:</span><input type="text" id="fname" placeholder="First Name"><br>
@@ -331,13 +334,13 @@
                 <option value="ZM">Zambia</option>
                 <option value="ZW">Zimbabwe</option>
             </select><br>
-            <span>Phone Number:</span><input type="text" maxlength="10" id="phonenumber" placeholder=""><br>
-            <span>Email Address:</span><input type="email" id="email"><br>
+            <span>Phone Number:</span><input type="text" maxlength="10" id="phonenumber" placeholder="Phone Number"><br>
+            <span>Email Address:</span><input type="email" id="email" placeholder="Email Address"><br>
 
         </div>
 
         <div id="creditcard" style="display: none">
-            <label>Credit Card Info&nbsp;</label>
+            <span>Credit Card Info&nbsp;</span>
 		<select id="cardtype">
 						<option  value="Visa">Visa</option>
 						<option  value="Master Card">Master Card</option>
@@ -348,13 +351,13 @@
             <span>Credit Card Number</span><input type="text" minlength="13" maxlength="16" id="cardnumber"><br>
             <span>Expiration Date</span><input type="text" maxlength="7" id="expiration"><br>
             <span>CVV</span><input type="password" minlength="3" maxlength="4" id="cvv"><br>
-
+            <img src="credit-cards.png" style="width: 100px">
 
         </div>
 
-<button id="backbutton" onclick="location.reload()" style="display: none">Back</button>
+<!--<button id="backbutton" onclick="location.reload()" style="display: none">Back</button>-->
 
-<button id="paymentbutton" onclick="Payment()">Continue</button>
+
 
 
 </body>

@@ -55,14 +55,17 @@ function Reserve(){
 }
 
 function userForm() {
+
     var month = [ "January", "February", "March", "April","May","June","July","August", "September", "October", "November","December"];
     var datefrom = document.getElementById("datefrom").value;
-    if (datefrom=="") {
+
+        if (datefrom=="") {
         alert("Date must be filled out");
     }
 
+    else {
 
-    var dateObj = new Date(datefrom);
+            var dateObj = new Date(datefrom);
     dayofweek = dateObj.getUTCDay();
 
     fulldate = month[dateObj.getUTCMonth()] + " " + dateObj.getUTCDate() + ", " + dateObj.getUTCFullYear();
@@ -85,7 +88,7 @@ function userForm() {
     document.getElementById("timeto").style.display = "block";
 
     document.getElementById("button").onclick = Duration;
-
+        }
 
 }
 
@@ -178,10 +181,10 @@ function Payment(){
 
     document.getElementById("personalinfo").style.display = "none";
     document.getElementById("creditcard").style.display = "block";
-    document.getElementById("backbutton").style.display = "block";
+ //   document.getElementById("backbutton").style.display = "block";
 
-    document.getElementById("paymentbutton").innerHTML = "Reserve";
-    document.getElementById("paymentbutton").onclick = Reservation;
+    document.getElementById("button").innerHTML = "Reserve";
+    document.getElementById("button").onclick = Reservation;
 
 }
 
